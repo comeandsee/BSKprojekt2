@@ -8,7 +8,7 @@
         Title="klient" Height="450" Width="800">
     <Grid>
 
-        <TabControl TabStripPlacement="Top" Margin="0,29,9.6,-9" RenderTransformOrigin="0.467,0.501" SelectionChanged="TabControl_SelectionChanged">
+        <TabControl TabStripPlacement="Top" Margin="10,29,9.6,0" RenderTransformOrigin="0.467,0.501" >
 
             <TabItem Header="Dane" RenderTransformOrigin="0.5,0.5">
                 <TabItem.RenderTransform>
@@ -20,10 +20,10 @@
                     </TransformGroup>
                 </TabItem.RenderTransform>
                 <Grid>
-                    <Grid Margin="10,33,621.4,174" RenderTransformOrigin="0.815,0.45">
-                        <TextBlock TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top" HorizontalAlignment="Right" Width="64" Margin="0,0,82,0"/>
+                    <Grid Margin="10,33,650.4,174" RenderTransformOrigin="0.815,0.45">
                         <TextBlock HorizontalAlignment="Left" Margin="1,42,-17,0" TextWrapping="Wrap" Text="Nume telefonu" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539" Width="82"/>
-                        <TextBlock Margin="1,21,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top"/>
+                        <TextBlock Margin="2,0,-2,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"/>
+                        <TextBlock Margin="2,21,-2,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top"/>
                         <TextBlock HorizontalAlignment="Left" Margin="0,63,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
                         <TextBlock HorizontalAlignment="Left" Margin="1,84,0,0" TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top"/>
                         <TextBlock HorizontalAlignment="Left" Margin="1,105,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
@@ -31,22 +31,23 @@
 
                     </Grid>
 
-                    <Grid Margin="128,33,483.4,200" RenderTransformOrigin="0.815,0.45">
-                        <TextBlock TextWrapping="Wrap" Text="Marta" VerticalAlignment="Top" HorizontalAlignment="Right" Width="64" Margin="0,0,100,0"/>
+                    <Grid Margin="128,33,460.4,174" RenderTransformOrigin="0.815,0.45">
                         <TextBlock HorizontalAlignment="Left" Margin="1,42,-17,0" TextWrapping="Wrap" Text="111 111 111" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539" Width="82"/>
                         <TextBlock Margin="1,21,0,0" TextWrapping="Wrap" Text="Kaplińska" VerticalAlignment="Top"/>
                         <TextBlock HorizontalAlignment="Left" Margin="0,63,0,0" TextWrapping="Wrap" Text="klient_123" VerticalAlignment="Top"/>
                         <TextBlock HorizontalAlignment="Left" Margin="1,84,0,0" TextWrapping="Wrap" Text="*****" VerticalAlignment="Top"/>
                         <TextBlock HorizontalAlignment="Left" Margin="1,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="mk.marta96@gmail."/><Run Text="c"/><Run Text="om"/><LineBreak/><Run Text="&#x9;"/></TextBlock>
                         <TextBlock HorizontalAlignment="Left" Margin="1,123,0,0" TextWrapping="Wrap" Text="ATV12e1233" VerticalAlignment="Top"/>
+                        <TextBlock Margin="0,0,-1,0" TextWrapping="Wrap" Text="Marta" VerticalAlignment="Top"/>
 
                     </Grid>
 
-                    <Button Content="Edytuj dane" Width="75" Margin="187,220,516.4,126"/>
+                    <Button Content="Edytuj dane" Margin="162,258,511.8,78.4"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Historia wypożyczeń">
                 <Grid>
+                    <DataGrid HorizontalAlignment="Left" Height="352" Margin="10,10,0,0" VerticalAlignment="Top" Width="758"/>
 
 
                 </Grid>
@@ -54,8 +55,9 @@
 
             <TabItem Header="Faktury" >
                 <Grid>
+                    <DataGrid HorizontalAlignment="Left" Height="352" Margin="10,10,0,0" VerticalAlignment="Top" Width="758"/>
 
-                    <DocumentViewer Height="100" Width="100"/>
+
                 </Grid>
             </TabItem>
 
