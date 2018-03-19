@@ -24,5 +24,7 @@ namespace BSK2
         {
             InitializeComponent();
         }
+
+      
     }
 }
