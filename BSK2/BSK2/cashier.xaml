@@ -1,0 +1,51 @@
+﻿<Window x:Class="BSK2.cashier"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BSK2"
+        mc:Ignorable="d"
+        Title="cashier" Height="450" Width="800">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="381" Margin="0,29,0,0" VerticalAlignment="Top" Width="769">
+            <TabItem Header="Wypożycz" Margin="-2,-2,-2,0">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="91.2"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Dodaj użytkownika" Margin="-2,-2,-2,0">
+                <Grid Background="#FFE5E5E5" Margin="-5,1,5.4,-1.2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Margin="10,33,475.6,125.8" RenderTransformOrigin="0.815,0.45">
+                        <TextBlock Margin="0,73,34,0" TextWrapping="Wrap" Text="Nume telefonu" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"/>
+                        <TextBlock Margin="1,25,-1,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"/>
+                        <TextBlock Margin="0,46,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top"/>
+                        <TextBlock Margin="1,94,86,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
+                        <TextBlock Margin="0,120,85.8,0" TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top"/>
+                        <TextBlock Margin="0,142,88,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
+                        <TextBlock Margin="0,163,19.8,-0.2" TextWrapping="Wrap" Text="Numer dowodu" VerticalAlignment="Top"/>
+
+                    </Grid>
+                    <Grid Margin="143,33,297.6,125.8">
+                        <TextBox x:Name="nameCashier" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" Margin="0,21,0,0"/>
+                        <TextBox x:Name="surnameCashier" HorizontalAlignment="Left" Height="19" Margin="0,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="phoneNoCashier" HorizontalAlignment="Left" Height="19" Margin="0,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="loginCashier" HorizontalAlignment="Left" Height="19" Margin="0,93,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="passwordCashier3" HorizontalAlignment="Left" Height="19" Margin="0,117,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="emailCashier" HorizontalAlignment="Left" Height="19" Margin="0,141,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="idCardCashier" HorizontalAlignment="Left" Height="19" Margin="0,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                    </Grid>
+                    <Button x:Name="buttonRegister" Content="Zarejestruj" HorizontalAlignment="Left" Margin="191,274,0,0" VerticalAlignment="Top" Width="75" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Content="Wyloguj" HorizontalAlignment="Left" Margin="694,10,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

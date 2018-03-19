@@ -27,24 +27,45 @@ namespace BSK2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(login.Text == "")
+           
+            if (comboBox.Text=="klient" )
             {
                 new klient().Show();
                 this.Hide();
-                if (password.Password == "lol" )
-                {
-                    new registered().Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show(" Please check the correctness of the password ");
-                }
+            }
+            else if (comboBox.Text == "admin")
+            {
+                new admin().Show();
+                this.Hide();
+            }
+            else if (comboBox.Text == "kasjer")
+            {
+                new cashier().Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show(" You entered the wrong login. ");
+                MessageBox.Show(" Please choose who you are. ");
             }
+            /* if (login.Text == "")
+             {
+                 new klient().Show();
+                 this.Hide();
+                 if (password.Password == "lol" )
+                 {
+                     new registered().Show();
+                     this.Hide();
+                 }
+                 else
+                 {
+                     MessageBox.Show(" Please check the correctness of the password ");
+                 }
+             }
+             else
+             {
+                 MessageBox.Show(" You entered the wrong login. ");
+             }
+             */
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
