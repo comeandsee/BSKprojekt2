@@ -35,14 +35,14 @@
                                 <Button  x:Name="chooseClientCashierButton" Content="Wybierz " HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="116,71,0,0" RenderTransformOrigin="0.38,2.875" />
                                 <TextBox x:Name="PriceCashier" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="21.11 zł" VerticalAlignment="Top" Width="111" Margin="0,90,0,0"/>
                                 <TextBox x:Name="discountCashier" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00.00 zł" VerticalAlignment="Top" Width="111" Margin="0,113,0,0"/>
-                                <TextBox x:Name="idFacture"  IsReadOnly="True" Background="DarkGray" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#112" VerticalAlignment="Top" Width="111" TextChanged="TextBox_TextChanged" Margin="0,136,0,0"/>
+                                <TextBox x:Name="idFacture"  IsReadOnly="True" Background="DarkGray" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#112" VerticalAlignment="Top" Width="111"  Margin="0,136,0,0"/>
                                 <TextBox x:Name="idCashier"  IsReadOnly="True" Background="DarkGray" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#2" VerticalAlignment="Top" Width="111" Margin="0,159,0,0"/>
                                 <TextBox x:Name="nameRentalCashier"  IsReadOnly="True" Background="DarkGray" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="JustPlay&amp;Wrzeszcz" VerticalAlignment="Top" Width="111" Margin="0,182,0,0"/>
                                 <TextBox x:Name="idRentCashier"  IsReadOnly="True" Background="DarkGray" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#1100" VerticalAlignment="Top" Width="111"/>
                             </Grid>
                             <TextBox x:Name="userRentCashier" HorizontalAlignment="Left" Height="19" Margin="0,71,0,0" TextWrapping="Wrap" Text="Marta Kaplińska" VerticalAlignment="Top" Width="111"/>
                         </Grid>
-                        <ListView Grid.Column="2" HorizontalAlignment="Left" Height="123" Margin="59.6,221,0,0" VerticalAlignment="Top" Width="408" SelectionChanged="ListView_SelectionChanged">
+                        <ListView Grid.Column="2" HorizontalAlignment="Left" Height="123" Margin="59.6,221,0,0" VerticalAlignment="Top" Width="408" >
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Header="Nazwa" Width="100"  />
@@ -78,7 +78,7 @@
 
                     </Grid>
                     <Grid Margin="143,33,297.6,125.8">
-                        <TextBox x:Name="nameCashier" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" Margin="0,21,0,0"/>
+                        <TextBox x:Name="nameCashier" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="0,21,0,0"/>
                         <TextBox x:Name="surnameCashier" HorizontalAlignment="Left" Height="19" Margin="0,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
                         <TextBox x:Name="phoneNoCashier" HorizontalAlignment="Left" Height="19" Margin="0,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                         <TextBox x:Name="loginCashier" HorizontalAlignment="Left" Height="19" Margin="0,93,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
