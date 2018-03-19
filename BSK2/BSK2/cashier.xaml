@@ -13,36 +13,28 @@
                     <Grid Background="#FFE5E5E5" Margin="0,0,-23.2,-0.2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="91.2"/>
-                            <ColumnDefinition Width="23*"/>
-                            <ColumnDefinition Width="648*"/>
+                            <ColumnDefinition Width="24*"/>
+                            <ColumnDefinition Width="69*"/>
+                            <ColumnDefinition Width="29*"/>
+                            <ColumnDefinition Width="572*"/>
                         </Grid.ColumnDefinitions>
-                        <Grid Grid.ColumnSpan="3" Margin="6,7,568.6,51.8">
-                            <TextBlock Margin="1,0,33,0" TextWrapping="Wrap" Text="ID WPOŻYCZENIA" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"/>
-                            <TextBlock Margin="1,25,-1,0" TextWrapping="Wrap" Text="Wybierz datę wypożyczenia" VerticalAlignment="Top"/>
-                            <TextBlock Margin="0,46,0,0" TextWrapping="Wrap" Text="Wybierz datę zwrotu" VerticalAlignment="Top"/>
-                            <TextBlock Margin="1,94,86,0" TextWrapping="Wrap" Text="Cena" VerticalAlignment="Top"/>
-                            <TextBlock Margin="1,73,84,0" TextWrapping="Wrap" Text="Wybierz klienta" VerticalAlignment="Top"/>
-                            <TextBlock Margin="0,157,88,0" TextWrapping="Wrap" Text="ID pracownika: " VerticalAlignment="Top"/>
-                            <TextBlock Margin="1,178,18,0" TextWrapping="Wrap" Text="Wypożyczalnia" VerticalAlignment="Top"/>
-                            <TextBlock Margin="1,136,33,0" TextWrapping="Wrap" Text="ID faktury" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"/>
-                            <TextBlock Margin="1,199,33,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"><Run Text="Wpożyczone pozycje"/><Run Text=":"/></TextBlock>
-                            <TextBlock Margin="0,115,87,0" TextWrapping="Wrap" Text="Rabat" VerticalAlignment="Top"/>
+                        <Grid Margin="59.8,0,361.8,98.8" Grid.ColumnSpan="3" Grid.Column="2">
+                            <DatePicker  x:Name="dataRentCashier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="0,23,0,0"/>
+                            <DatePicker x:Name="dataReturnCashier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="0,47,0,0"/>
+                            <Button  x:Name="chooseClientCashierButton" Content="Wybierz " HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="116,71,0,0" RenderTransformOrigin="0.38,2.875" />
+                            <TextBox x:Name="PriceCashier" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="21.11 zł" VerticalAlignment="Top" Width="111" Margin="0,90,0,0"/>
+                            <TextBox x:Name="discountCashier" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00.00 zł" VerticalAlignment="Top" Width="111" Margin="0,113,0,0"/>
+                            <TextBox x:Name="idFacture"  IsReadOnly="True" Background="#d3d3d3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#112" VerticalAlignment="Top" Width="111"  Margin="0,136,0,0"/>
+                            <TextBox x:Name="idCashier"  IsReadOnly="True" Background="#d3d3d3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#2" VerticalAlignment="Top" Width="111" Margin="0,159,0,0"/>
+                            <TextBox x:Name="nameRentalCashier"  IsReadOnly="True" Background="#d3d3d3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="JustPlay&amp;Wrzeszcz" VerticalAlignment="Top" Width="111" Margin="0,182,0,0"/>
+                            <TextBox x:Name="idRentCashier"  IsReadOnly="True" Background="#d3d3d3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#1100" VerticalAlignment="Top" Width="111"/>
+                            <ComboBox HorizontalAlignment="Left" Margin="0,205,0,-0.2" VerticalAlignment="Top" Width="111" Height="25">
+                                <Label Content="wypożyczone"/>
+                                <Label Content="zwrócone"/>
+                            </ComboBox>
                         </Grid>
-                        <Grid Grid.Column="2" Margin="59.6,10,360.2,137.6">
-                            <Grid Margin="0,0,1.6,0.8">
-                                <DatePicker  x:Name="dataRentCashier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="0,23,0,0"/>
-                                <DatePicker x:Name="dataReturnCashier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="0,47,0,0"/>
-                                <Button  x:Name="chooseClientCashierButton" Content="Wybierz " HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="116,71,0,0" RenderTransformOrigin="0.38,2.875" />
-                                <TextBox x:Name="PriceCashier" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="21.11 zł" VerticalAlignment="Top" Width="111" Margin="0,90,0,0"/>
-                                <TextBox x:Name="discountCashier" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00.00 zł" VerticalAlignment="Top" Width="111" Margin="0,113,0,0"/>
-                                <TextBox x:Name="idFacture"  IsReadOnly="True" Background="DarkGray" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#112" VerticalAlignment="Top" Width="111"  Margin="0,136,0,0"/>
-                                <TextBox x:Name="idCashier"  IsReadOnly="True" Background="DarkGray" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#2" VerticalAlignment="Top" Width="111" Margin="0,159,0,0"/>
-                                <TextBox x:Name="nameRentalCashier"  IsReadOnly="True" Background="DarkGray" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="JustPlay&amp;Wrzeszcz" VerticalAlignment="Top" Width="111" Margin="0,182,0,0"/>
-                                <TextBox x:Name="idRentCashier"  IsReadOnly="True" Background="DarkGray" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#1100" VerticalAlignment="Top" Width="111"/>
-                            </Grid>
-                            <TextBox x:Name="userRentCashier" HorizontalAlignment="Left" Height="19" Margin="0,71,0,0" TextWrapping="Wrap" Text="Marta Kaplińska" VerticalAlignment="Top" Width="111"/>
-                        </Grid>
-                        <ListView Grid.Column="2" HorizontalAlignment="Left" Height="123" Margin="59.6,221,0,0" VerticalAlignment="Top" Width="408" >
+                        <TextBox x:Name="userRentCashier" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="Marta Kaplińska" VerticalAlignment="Top" Width="111" Margin="59.8,71,0,0" Grid.ColumnSpan="3" Grid.Column="2"/>
+                        <ListView Grid.Column="2" HorizontalAlignment="Left" Height="123" Margin="59.8,231,0,-0.2" VerticalAlignment="Top" Width="408" Grid.ColumnSpan="3" >
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Header="Nazwa" Width="100"  />
@@ -52,22 +44,72 @@
                                 </GridView>
                             </ListView.View>
                         </ListView>
-                        <Button x:Name="addGame" Content="Dodaj " HorizontalAlignment="Left" Margin="485.6,223,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.701,0.401" Grid.Column="2"/>
-                        <Button x:Name="deleteGame" Content="Usuń " HorizontalAlignment="Left" Margin="485.6,247,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2"/>
-                        <Button x:Name="rentGam_button" Content="Wypożycz " Background="Red" Foreground="White" Grid.Column="2" HorizontalAlignment="Left" Margin="563.6,325,0,0" VerticalAlignment="Top" Width="75"/>
+                        <Button x:Name="addGame" Content="Dodaj " HorizontalAlignment="Left" Margin="388.4,223,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.701,0.401" Grid.Column="4"/>
+                        <Button x:Name="deleteGame" Content="Usuń " HorizontalAlignment="Left" Margin="388.4,247,0,0" VerticalAlignment="Top" Width="75" Grid.Column="4"/>
+                        <Button x:Name="rentGam_button" Content="Wypożycz " Background="Green" Foreground="White" Grid.Column="4" HorizontalAlignment="Left" Margin="466.4,325,0,0" VerticalAlignment="Top" Width="75" />
+                        <Grid Grid.ColumnSpan="5" Margin="6,7,568.8,51.8">
+                            <Grid Margin="0,0,1.6,-0.2">
+                                <TextBlock  Margin="1,0,33,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"><Run Text="ID "/><Run Text="wypożenia "/></TextBlock>
+                                <TextBlock Margin="1,25,-1,0" TextWrapping="Wrap" Text="Wybierz datę wypożyczenia" VerticalAlignment="Top"/>
+                                <TextBlock Margin="0,46,0,0" TextWrapping="Wrap" Text="Wybierz datę zwrotu" VerticalAlignment="Top"/>
+                                <TextBlock Margin="3,88,84,0" TextWrapping="Wrap" Text="Cena" VerticalAlignment="Top"/>
+                                <TextBlock Margin="1,67,84,0" TextWrapping="Wrap" Text="Wybierz klienta" VerticalAlignment="Top"/>
+                                <TextBlock Margin="0,156,88,0" TextWrapping="Wrap" Text="ID pracownika: " VerticalAlignment="Top"/>
+                                <TextBlock Margin="1,177,18,0" TextWrapping="Wrap" Text="Wypożyczalnia" VerticalAlignment="Top"/>
+                                <TextBlock Margin="0,130,34,0" TextWrapping="Wrap" Text="ID faktury" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"/>
+                                <TextBlock Margin="0,227,34,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"><Run Text="Wpożyczone pozycje"/><Run Text=":"/></TextBlock>
+                                <TextBlock Margin="1,109,86,0" TextWrapping="Wrap" Text="Rabat" VerticalAlignment="Top"/>
+                            </Grid>
+                            <TextBlock Margin="0,199,20.6,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top"/>
+                        </Grid>
                     </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Zwrot" Margin="-2,-2,-2,0">
+                <Grid Background="#FFE5E5E5" Margin="0,2,0.4,-2.2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="23*"/>
+                        <ColumnDefinition Width="739*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.ColumnSpan="2" Margin="6,7,545.6,51.2">
+                        <Grid Margin="0,0,1.6,-0.2">
+                            <TextBlock  Margin="1,0,33,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"><Run Text="Wybierz "/><Run Text="ID "/><Run Text="wypożenia "/></TextBlock>
+                            <TextBlock Margin="1,44,-1,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="D"/><Run Text="at"/><Run Text="a "/><Run Text="wypożyczenia"/></TextBlock>
+                            <TextBlock Margin="1,65,-1,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="D"/><Run Text="at"/><Run Text="a"/><Run Text=" zwrotu"/></TextBlock>
+                            <TextBlock Margin="0,107,87,0" TextWrapping="Wrap" Text="Cena" VerticalAlignment="Top"/>
+                            <TextBlock Margin="1,86,84,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="K"/><Run Text="lient"/></TextBlock>
+                            <TextBlock Margin="-1,128,35,0" TextWrapping="Wrap" Text="ID faktury" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"/>
+                            <TextBlock Margin="1,149,33,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"><Run Text="Kara za opó"/><Run Text="ź"/><Run Text="nienie"/></TextBlock>
+                        </Grid>
+                        <TextBlock Margin="0,22,21,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Zmień s"/><Run Text="t"/><Run Text="at"/><Run Text="us"/></TextBlock>
+                    </Grid>
+                    <Grid Margin="151.8,0,338.6,98.2" Grid.Column="1">
+                        <TextBox x:Name="PriceCashier1" IsReadOnly="True" Background="#d3d3d3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="21.11 zł" VerticalAlignment="Top" Width="111" Margin="0,113,0,0"/>
+                        <TextBox x:Name="idFacture1"  IsReadOnly="True" Background="#d3d3d3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#112" VerticalAlignment="Top" Width="111"  Margin="0,136,0,0"/>
+                        <TextBox x:Name="penaltyCashier1" Background="OrangeRed"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="5.00 zł" VerticalAlignment="Top" Width="111" Margin="0,159,0,0" />
+                        <TextBox x:Name="idRentCashier1"   HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#1100" VerticalAlignment="Top" Width="111" Margin="0,2,0,0" />
+                        <ComboBox HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="111" Height="25">
+                            <Label Content="wypożyczone"/>
+                            <Label Content="zwrócone"/>
+                        </ComboBox>
+                    </Grid>
+                    <TextBox x:Name="userRentCashier1"  IsReadOnly="True"  Background="#d3d3d3" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="Marta Kaplińska" VerticalAlignment="Top" Width="111" Margin="151.8,96,0,0" Grid.Column="1"/>
+                    <TextBox x:Name="dataRentCashier1"  IsReadOnly="True" Background="#d3d3d3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#1100" VerticalAlignment="Top" Width="111" Margin="151.8,50,0,0" Grid.Column="1"/>
+                    <TextBox x:Name="dataReturnCashier1"  IsReadOnly="True" Background="#d3d3d3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="#1100" VerticalAlignment="Top" Width="111" Margin="151.8,73,0,0" Grid.Column="1"/>
+                    <Button Content="Zwróć" Background="Green" Foreground="White" Grid.Column="1" HorizontalAlignment="Left" Margin="187.8,221,0,0" VerticalAlignment="Top" Width="75"/>
+
+
+                </Grid>
             </TabItem>
 
             <TabItem Header="Dodaj użytkownika" Margin="-2,-2,-2,0">
-                <Grid Background="#FFE5E5E5" Margin="-5,1,5.4,-1.2">
+                <Grid Background="#FFE5E5E5" Margin="0,2,0.4,-2.2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="15*"/>
-                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="561*"/>
+                        <ColumnDefinition Width="159*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid Margin="10,33,475.6,125.8" RenderTransformOrigin="0.815,0.45">
+                    <Grid Margin="10,33,475.4,126.8" RenderTransformOrigin="0.815,0.45" Grid.ColumnSpan="2">
                         <TextBlock Margin="0,73,34,0" TextWrapping="Wrap" Text="Nume telefonu" VerticalAlignment="Top" RenderTransformOrigin="-0.155,-0.539"/>
                         <TextBlock Margin="1,25,-1,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"/>
                         <TextBlock Margin="0,46,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top"/>
@@ -77,7 +119,7 @@
                         <TextBlock Margin="0,163,19.8,-0.2" TextWrapping="Wrap" Text="Numer dowodu" VerticalAlignment="Top"/>
 
                     </Grid>
-                    <Grid Margin="143,33,297.6,125.8">
+                    <Grid Margin="102,33,297.4,126.8" Grid.Column="1">
                         <TextBox x:Name="nameCashier" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="0,21,0,0"/>
                         <TextBox x:Name="surnameCashier" HorizontalAlignment="Left" Height="19" Margin="0,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
                         <TextBox x:Name="phoneNoCashier" HorizontalAlignment="Left" Height="19" Margin="0,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -86,7 +128,7 @@
                         <TextBox x:Name="emailCashier" HorizontalAlignment="Left" Height="19" Margin="0,141,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
                         <TextBox x:Name="idCardCashier" HorizontalAlignment="Left" Height="19" Margin="0,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
                     </Grid>
-                    <Button x:Name="buttonRegister" Content="Zarejestruj" HorizontalAlignment="Left" Margin="191,274,0,0" VerticalAlignment="Top" Width="75" />
+                    <Button x:Name="buttonRegister" Content="Zarejestruj" HorizontalAlignment="Left" Margin="150,274,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" />
                 </Grid>
             </TabItem>
 
