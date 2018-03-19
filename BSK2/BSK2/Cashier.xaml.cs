@@ -22,6 +22,9 @@ namespace BSK2
         public cashier()
         {
             InitializeComponent();
+           
         }
+
+        
     }
 }
