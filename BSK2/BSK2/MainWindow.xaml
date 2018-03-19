@@ -11,13 +11,14 @@
         <Label Content="Login" HorizontalAlignment="Left" Margin="101,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.402,1.848"/>
         <Label Content="Stanowisko" HorizontalAlignment="Left" Margin="101,127,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.402,1.848"/>
         <Label Content="Hasło" HorizontalAlignment="Left" Margin="101,222,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.402,1.848"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="183,226,0,0" VerticalAlignment="Top" Height="22" Width="174"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="183,175,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="174"/>
+        <PasswordBox x:Name="password" PasswordChar="*" HorizontalAlignment="Left" Margin="183,226,0,0" VerticalAlignment="Top" Height="22" Width="174"/>
+        <TextBox x:Name="login"  HorizontalAlignment="Left" Height="22" Margin="183,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174"/>
         <ComboBox HorizontalAlignment="Left" Margin="183,127,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
             <Label Content="admin"/>
             <Label Content="kasjer"/>
             <Label Content="..."/>
             <Label Content="administracja"/>
         </ComboBox>
+        <Button Content="zaloguj !" HorizontalAlignment="Left" Margin="282,290,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>

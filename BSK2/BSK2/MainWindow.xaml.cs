@@ -25,6 +25,29 @@ namespace BSK2
             InitializeComponent();
         }
 
-      
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(login.Text == "")
+            {
+                if(password.Password == "lol" )
+                {
+                    new registered().Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(" Please check the correctness of the password ");
+                }
+            }
+            else
+            {
+                MessageBox.Show(" You entered the wrong login. ");
+            }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
