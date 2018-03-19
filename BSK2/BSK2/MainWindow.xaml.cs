@@ -29,7 +29,9 @@ namespace BSK2
         {
             if(login.Text == "")
             {
-                if(password.Password == "lol" )
+                new klient().Show();
+                this.Hide();
+                if (password.Password == "lol" )
                 {
                     new registered().Show();
                     this.Hide();
@@ -47,7 +49,7 @@ namespace BSK2
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+          
         }
     }
 }
