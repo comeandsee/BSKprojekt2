@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace BSK2
 {
@@ -20,57 +22,79 @@ namespace BSK2
     /// </summary>
     public partial class MainWindow : Window
     {
+        LINQtoSQLDataContext dc = new LINQtoSQLDataContext(Properties.Settings.Default.bskaConnectionString);
+        public Uzytkownik userLoggedIn;
         public MainWindow()
         {
             InitializeComponent();
+          
+        }
+
+        public void refreshAuth()
+        {
+            if(userLoggedIn!=null)
+            {
+                if (userLoggedIn.ID_roli == 1) //klient
+                {
+                    klient k = new klient(this);
+                    k.Owner = this;
+                    k.Show();
+                    this.Hide();
+                }
+                if (userLoggedIn.ID_roli != 1) //kasjerGlowny 2 , kasjer - 3  admin -4
+                {
+                    cashier k = new cashier(this);
+                    k.Owner = this;
+                    k.Show();
+                    this.Hide();
+                }        
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
-            if (comboBox.Text=="klient" )
+            String userName = login.Text;
+           // String userName = "Kamil";
+            if (login.Text == "")
             {
-                new klient().Show();
-                this.Hide();
+                MessageBox.Show(" Nie wpisales loginu. ");
             }
-            else if (comboBox.Text == "admin")
+            else if (password.Password == "")
             {
-                new admin().Show();
-                this.Hide();
-            }
-            else if (comboBox.Text == "kasjer")
-            {
-                new cashier().Show();
-                this.Hide();
+                MessageBox.Show(" Nie wpisales hasla. ");
             }
             else
             {
-                MessageBox.Show(" Please choose who you are. ");
+                var getAccount =
+                    (from c in dc.Uzytkowniks
+                     where c.User_login == userName 
+                            && c.Haslo== password.Password
+                     select c);
+
+                if(getAccount.Count()!=1)
+                {
+                    MessageBox.Show(" Konta nie znaleziono ! ");
+                }
+                else 
+                {
+                    userLoggedIn = getAccount.First();
+                    refreshAuth();
+
+                }
             }
-            /* if (login.Text == "")
-             {
-                 new klient().Show();
-                 this.Hide();
-                 if (password.Password == "lol" )
-                 {
-                     new registered().Show();
-                     this.Hide();
-                 }
-                 else
-                 {
-                     MessageBox.Show(" Please check the correctness of the password ");
-                 }
-             }
-             else
-             {
-                 MessageBox.Show(" You entered the wrong login. ");
-             }
-             */
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
           
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //dc.SubmitChanges();
+
         }
     }
 }

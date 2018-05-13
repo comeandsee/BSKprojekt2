@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bska" Class="LINQtoSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WINDOWS-K3QI2I9;Initial Catalog=bska;Integrated Security=True" SettingsObjectName="BSK2.Properties.Settings" SettingsPropertyName="bskaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Gra" Member="Gras">
+    <Type Name="Gra">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nazwa" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Cena_dzien" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Kategoria" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Kaucja" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Classification" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Gra_Wypo_gra" Member="Wypo_gras" ThisKey="ID" OtherKey="ID_gry" Type="Wypo_gra" />
+      <Association Name="PoziomUfnosci_Gra" Member="PoziomUfnosci" ThisKey="Classification" OtherKey="ID" Type="PoziomUfnosci" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wypozyczenie" Member="Wypozyczenies">
+    <Type Name="Wypozyczenie">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Data_wypozyczenia" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Data_zwrotu" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Cena" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Kara" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Status_Wypo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Faktury" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Classification" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Wypozyczenie_Wypo_user" Member="Wypo_users" ThisKey="ID" OtherKey="ID_wypo" Type="Wypo_user" />
+      <Association Name="Wypozyczenie_Wypo_gra" Member="Wypo_gras" ThisKey="ID" OtherKey="ID_wypo" Type="Wypo_gra" />
+      <Association Name="Faktura_Wypozyczenie" Member="Faktura" ThisKey="ID_Faktury" OtherKey="ID" Type="Faktura" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="PoziomUfnosci_Wypozyczenie" Member="PoziomUfnosci" ThisKey="Classification" OtherKey="ID" Type="PoziomUfnosci" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wypo_user" Member="Wypo_users">
+    <Type Name="Wypo_user">
+      <Column Name="ID_user" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_wypo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Classification" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Wypozyczenie_Wypo_user" Member="Wypozyczenie" ThisKey="ID_wypo" OtherKey="ID" Type="Wypozyczenie" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Uzytkownik_Wypo_user" Member="Uzytkownik" ThisKey="ID_user" OtherKey="ID" Type="Uzytkownik" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PoziomUfnosci_Wypo_user" Member="PoziomUfnosci" ThisKey="Classification" OtherKey="ID" Type="PoziomUfnosci" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Faktura" Member="Fakturas">
+    <Type Name="Faktura">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Data_wystawienia" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ID_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Classification" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Faktura_Wypozyczenie" Member="Wypozyczenies" ThisKey="ID" OtherKey="ID_Faktury" Type="Wypozyczenie" />
+      <Association Name="Uzytkownik_Faktura" Member="Uzytkownik" ThisKey="ID_user" OtherKey="ID" Type="Uzytkownik" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="PoziomUfnosci_Faktura" Member="PoziomUfnosci" ThisKey="Classification" OtherKey="ID" Type="PoziomUfnosci" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rola" Member="Rolas">
+    <Type Name="Rola">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nazwa" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Clearance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Rola_Uzytkownik" Member="Uzytkowniks" ThisKey="ID" OtherKey="ID_roli" Type="Uzytkownik" />
+      <Association Name="PoziomUfnosci_Rola" Member="PoziomUfnosci" ThisKey="Clearance" OtherKey="ID" Type="PoziomUfnosci" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wypo_gra" Member="Wypo_gras">
+    <Type Name="Wypo_gra">
+      <Column Name="ID_gry" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_wypo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Rabat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Classification" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Gra_Wypo_gra" Member="Gra" ThisKey="ID_gry" OtherKey="ID" Type="Gra" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Wypozyczenie_Wypo_gra" Member="Wypozyczenie" ThisKey="ID_wypo" OtherKey="ID" Type="Wypozyczenie" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PoziomUfnosci_Wypo_gra" Member="PoziomUfnosci" ThisKey="Classification" OtherKey="ID" Type="PoziomUfnosci" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Uzytkownik" Member="Uzytkowniks">
+    <Type Name="Uzytkownik">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Imie" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nazwisko" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Nr_telefonu" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="User_login" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Haslo" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_roli" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Classification" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Uzytkownik_Wypo_user" Member="Wypo_users" ThisKey="ID" OtherKey="ID_user" Type="Wypo_user" />
+      <Association Name="Uzytkownik_Faktura" Member="Fakturas" ThisKey="ID" OtherKey="ID_user" Type="Faktura" />
+      <Association Name="Rola_Uzytkownik" Member="Rola" ThisKey="ID_roli" OtherKey="ID" Type="Rola" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="PoziomUfnosci_Uzytkownik" Member="PoziomUfnosci" ThisKey="Classification" OtherKey="ID" Type="PoziomUfnosci" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PoziomUfnosci" Member="PoziomUfnoscis">
+    <Type Name="PoziomUfnosci">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nazwa" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="PoziomUfnosci_Gra" Member="Gras" ThisKey="ID" OtherKey="Classification" Type="Gra" />
+      <Association Name="PoziomUfnosci_Wypozyczenie" Member="Wypozyczenies" ThisKey="ID" OtherKey="Classification" Type="Wypozyczenie" />
+      <Association Name="PoziomUfnosci_Wypo_user" Member="Wypo_users" ThisKey="ID" OtherKey="Classification" Type="Wypo_user" />
+      <Association Name="PoziomUfnosci_Faktura" Member="Fakturas" ThisKey="ID" OtherKey="Classification" Type="Faktura" />
+      <Association Name="PoziomUfnosci_Rola" Member="Rolas" ThisKey="ID" OtherKey="Clearance" Type="Rola" />
+      <Association Name="PoziomUfnosci_Wypo_gra" Member="Wypo_gras" ThisKey="ID" OtherKey="Classification" Type="Wypo_gra" />
+      <Association Name="PoziomUfnosci_Uzytkownik" Member="Uzytkowniks" ThisKey="ID" OtherKey="Classification" Type="Uzytkownik" />
+    </Type>
+  </Table>
+</Database>
